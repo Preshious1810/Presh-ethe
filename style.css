@@ -1,106 +1,156 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --clr-soft-blue: hsl(215, 51%, 70%);
+  --clr-cyan: hsl(178, 100%, 50%);
 }
 
 body {
-    background-color: rgb(28, 32, 34);
-    font-family: Arial;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  background-color: rgb(28, 32, 34);
+  font-family: Arial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .card {
-    background-color: rgb(20, 37, 61);
-    border-radius: 20px;
-    font-family: arial;
-    width: 350px;
-    line-height: 20px;
-    color: white;
-    padding: 20px;
+  position: relative;
+  background-color: rgb(20, 37, 61);
+  border-radius: 20px;
+  font-family: arial;
+  width: 350px;
+  line-height: 20px;
+  color: white;
+  padding: 20px;
 }
 
 .card-image img {
-    width: 100%;
-    border-radius: 10px;
-    display: flex;
-    cursor: pointer;
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  cursor: pointer;
 }
 
+.card-image .overlay-parent {
+  position: absolute;
+  z-index: 10;
+  width: 350px;
+  height: 350px;
+  padding: 20px;
+  display: flex;
+  left: 0;
+  top: 0;
+}
+
+.card-image .overlay-child {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: var(--clr-cyan);
+}
+
+.card-image .overlay-parent img {
+  width: 2.5rem;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-image .overlay-child:hover {
+  opacity: 0.5;
+}
+
+.card-image .overlay-parent:hover {
+  cursor: pointer;
+  opacity: 1;
+}
 
 .card-content {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .card-content h2 {
-    font-family: arial;
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: white;
-    cursor: pointer;
+  font-family: arial;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: white;
+  cursor: pointer;
 }
 
 .card-content h2:hover {
-    color: rgb(0, 255, 248);
+  color: rgb(0, 255, 248);
 }
 
 .card-content p {
-    font-size: 16px;
-    color: rgb(107, 155, 223);
-    margin-bottom: 20px;
+  font-size: 1rem;
+  color: rgb(107, 155, 223);
+  margin-bottom: 20px;
 }
 
 .card-details {
-    display: flex;
-    justify-content: space-between;
-    font-size: 15px;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  margin-bottom: 20px;
 }
 
 .price {
-    display: flex;
-    align-items: center;
-    color: rgb(0, 255, 248);
-    font-weight: bold;
+  display: flex;
+  align-items: center;
+  color: rgb(0, 255, 248);
+  font-weight: bold;
 }
 
 .price img {
-    width: 12px;
-    height: 12px;
-    color: rgb(0, 255, 248);
-    margin-right: 5px;
+  width: 0.6rem;
+  color: rgb(0, 255, 248);
+  margin-right: 5px;
 }
 
 .time-left {
-    font-size: 15px;
-    align-content: center;
+  display: flex;
+  align-items: center;
+  column-gap: 0.3rem;
+}
+
+.time-left img {
+  width: 1rem;
+}
+
+.time-left p {
+  margin: auto;
 }
 
 .creator {
-    border-top: 1px solid #2f415b;
-    padding-top: 15px;
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-    color: #8bacda;
+  border-top: 1px solid #2f415b;
+  padding-top: 15px;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  color: #8bacda;
 }
 
 .creator img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin-right: 10px;
-    border: 1px solid white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 1px solid white;
 }
 
 .creator strong {
-    color: white;
-    cursor: pointer;
+  color: white;
+  cursor: pointer;
 }
 
 .creator strong:hover {
-    color: rgb(0, 255, 248);
+  color: rgb(0, 255, 248);
 }
